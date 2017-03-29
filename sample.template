@@ -181,5 +181,26 @@
      ]
     }
     }
-   }
+  },
+  "Outputs" : {
+    "WebsiteURL" : {
+      "Description" : "URL for newly created instnace",
+      "Value" : {
+        "Fn:Join" : [
+          "",
+          [
+            "https://",
+            {
+              "Fn:GetAtt" : [
+                "web1",
+                "PublicDnsName"
+              ]
+            }
+          ]
+        ]
+
+
+      }
+    }
+  }
   }
