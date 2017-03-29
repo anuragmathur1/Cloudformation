@@ -1,6 +1,14 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
   "Description" : "Single Instance",
+  "Parameters" : {
+    "KeyName" : {
+      "Description" : "Name of the existing keypair to enable passwordless ssh access to the instances",
+      "Type" : "String",
+      "ConstraintDescription" : "Must be a name of an existing EC2 keypair"
+    }
+  },
+
   "Resources" : {
    "web1" : {
      "Type": "AWS::EC2::Instance",
@@ -10,7 +18,7 @@
        "SecurityGroups" : [
          {"Ref": "webSG"}
        ],
-       "KeyName" : "mathuranurag30",
+       "KeyName" : { "Ref" : "KeyName" },
        "Tags" : [
          {
          "Key" : "Name",
