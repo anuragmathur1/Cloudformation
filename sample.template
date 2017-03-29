@@ -4,7 +4,7 @@
   "Parameters" : {
     "KeyName" : {
       "Description" : "Name of the existing keypair to enable passwordless ssh access to the instances",
-      "Type" : "String",
+      "Type" : "AWS::EC2::KeyPair::KeyName",
       "ConstraintDescription" : "Must be a name of an existing EC2 keypair"
     }
   },
