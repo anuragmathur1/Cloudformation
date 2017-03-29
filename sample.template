@@ -6,6 +6,20 @@
       "Description" : "Name of the existing keypair to enable passwordless ssh access to the instances",
       "Type" : "AWS::EC2::KeyPair::KeyName",
       "ConstraintDescription" : "Must be a name of an existing EC2 keypair"
+    },
+    "InstanceType" : {
+      "Description" : "Webserver EC2 instance Type",
+      "Type" : "String",
+      "Default" : "t2.micro",
+      "AllowedValues" : [
+        "t1.micro",
+        "t2.namo",
+        "t2.micro",
+        "t2.large",
+        "t2.small",
+        "t2.medium"
+      ],
+      "ConstraintDescription" : "Must be a valid EC2 intance Type"
     }
   },
 
