@@ -10,7 +10,8 @@
           "ErrorDocument" : "error.html"
         }
 
-      }
+      },
+      "DeletionPolicy" : "Retain"
     }
   },
   "Outputs" : {
