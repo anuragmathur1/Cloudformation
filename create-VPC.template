@@ -34,6 +34,19 @@
           }
         ]
       }
+    },
+    "InternetGateway" : {
+      "Type" : "AWS::EC2::InternetGateway",
+      "Properties" : {
+        "Tags" : [
+          {
+            "Key" : "Application",
+            "Value" : {
+              "Ref" : "AWS::StackId" 
+              }
+          }
+        ]
+      }
     }
   }
 }
