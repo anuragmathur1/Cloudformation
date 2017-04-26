@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Outputs:
+  S3BucketSecureURL:
+    Description: Name of S3 bucket to hold website content
+    Value:
+      Fn::Join:
+      - ''
+      - - https://
+        - Fn::GetAtt:
+          - amnews3
+          - DomainName
+Resources:
+  amnews3:
+    DeletionPolicy: Retain
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        ErrorDocument: error.html
+        IndexDocument: index.html
+    Type: AWS::S3::Bucket
